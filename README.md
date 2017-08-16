@@ -4,7 +4,7 @@ A library for building HTML layouts with plain Javascript.
 
 ## Getting Started
 
-This project uses `yarn` for package management, and `webpack` to build the `.js` files.
+This project uses `yarn` for package management, and `webpack` to build the `bundle.js` file.
 
 ```
 $ yarn install
@@ -22,42 +22,55 @@ $ python -m SimpleHTTPServer
 The following shows the basic use of the library. Notice how key components are split into their own functions.
 
 ```javascript
-import { div, h1, h3, p, render } from './Html'
+import { div, h1, h3, p, nav, ul, li, a, render } from './Html'
 
 function header() {
   return (
     div([{ class: 'header' }],
       [
-        h1([{ text: 'Header' }], [])
+        h1([{ text: 'js-html' }], []),
+        navigation()
       ])
   )
 }
 
-function mainSection() {
+function navigation() {
+
+  let links = ['Products', 'About', 'Contact']
+
   return (
-    div([{ class: 'main-section' }],
+    nav([],
       [
-        h3([{ text: 'Main Section' }], []),
-        div([{ class: 'intro' }],
-          [
-            p([{ text: 'Some stuff goes here.' }], [])
-          ])
+        ul([],
+          links.map((link) => {
+            return li([],
+              [
+                a([{ href: '#', text: link }], [])
+              ])
+          }))
+      ])
+  )
+}
+
+function content() {
+  return (
+    div([{ class: 'content' }],
+      [
+        p([{ text: 'Content goes here.' }], [])
       ])
   )
 }
 
 function view() {
   return [
-    div([{ id: 'app', class: 'container' }],
-      [
-        header(),
-        mainSection()
-      ])
+    div([{ class: 'container' }], [
+      header(),
+      content()
+    ])
   ]
 }
 
 render(view)
-
 ```
 
 The functions are very simple, you build your view by returning an array, then passing it to the `render` function.

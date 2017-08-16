@@ -1,34 +1,48 @@
-import { div, h1, h3, p, render } from './Html'
+import { div, h1, h3, p, nav, ul, li, a, render } from './Html'
 
 function header() {
   return (
     div([{ class: 'header' }],
       [
-        h1([{ text: 'Header' }], [])
+        h1([{ text: 'js-html' }], []),
+        navigation()
       ])
   )
 }
 
-function mainSection() {
+function navigation() {
+
+  let links = ['Products', 'About', 'Contact']
+
   return (
-    div([{ class: 'main-section' }],
+    nav([],
       [
-        h3([{ text: 'Main Section' }], []),
-        div([{ class: 'intro' }],
-          [
-            p([{ text: 'Some stuff goes here.' }], [])
-          ])
+        ul([],
+          links.map((link) => {
+            return li([],
+              [
+                a([{ href: '#', text: link }], [])
+              ])
+          }))
+      ])
+  )
+}
+
+function content() {
+  return (
+    div([{ class: 'content' }],
+      [
+        p([{ text: 'Content goes here.' }], [])
       ])
   )
 }
 
 function view() {
   return [
-    div([{ id: 'app', class: 'container' }],
-      [
-        header(),
-        mainSection()
-      ])
+    div([{ class: 'container' }], [
+      header(),
+      content()
+    ])
   ]
 }
 

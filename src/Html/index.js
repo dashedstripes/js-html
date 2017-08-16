@@ -35,6 +35,9 @@ function setAttributes(node, element) {
         case 'text':
           setText(element, a[prop])
           break
+        case 'href':
+          setHref(element, a[prop])
+          break
       }
     }
   })
@@ -46,6 +49,10 @@ function setText(element, text) {
 
 function setId(element, val) {
   element.setAttribute('id', val)
+}
+
+function setHref(element, val) {
+  element.setAttribute('href', val)
 }
 
 function setClass(element, val) {
@@ -70,7 +77,11 @@ function toExport() {
     { type: 'h4' },
     { type: 'h5' },
     { type: 'h6' },
-    { type: 'p' }
+    { type: 'p' },
+    { type: 'nav' },
+    { type: 'ul' },
+    { type: 'li' },
+    { type: 'a' }
   ]
 
   let toExport = {}
