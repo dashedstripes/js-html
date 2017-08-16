@@ -27,36 +27,28 @@ function setAttributes(node, element) {
     for (let prop in a) {
       switch (prop) {
         case 'id':
-          setId(element, a[prop])
+          setAttribute('id', element, a[prop])
           break
         case 'class':
-          setClass(element, a[prop])
+          setAttribute('class', element, a[prop])
           break
         case 'text':
           setText(element, a[prop])
           break
         case 'href':
-          setHref(element, a[prop])
+          setAttribute('href', element, a[prop])
           break
       }
     }
   })
 }
 
+function setAttribute(attr, el, val) {
+  el.setAttribute(attr, val)
+}
+
 function setText(element, text) {
   element.innerText = text
-}
-
-function setId(element, val) {
-  element.setAttribute('id', val)
-}
-
-function setHref(element, val) {
-  element.setAttribute('href', val)
-}
-
-function setClass(element, val) {
-  element.setAttribute('class', val)
 }
 
 function renderElement(parent, element) {
