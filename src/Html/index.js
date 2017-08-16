@@ -61,26 +61,26 @@ function render(view) {
 
 function toExport() {
   let elements = [
-    { type: 'div' },
-    { type: 'span' },
-    { type: 'h1' },
-    { type: 'h2' },
-    { type: 'h3' },
-    { type: 'h4' },
-    { type: 'h5' },
-    { type: 'h6' },
-    { type: 'p' },
-    { type: 'nav' },
-    { type: 'ul' },
-    { type: 'li' },
-    { type: 'a' }
+    'div',
+    'span',
+    'h1',
+    'h2',
+    'h3',
+    'h4',
+    'h5',
+    'h6',
+    'p',
+    'nav',
+    'ul',
+    'li',
+    'a'
   ]
 
   let toExport = {}
 
-  elements.map((v) => {
-    toExport[v.type] = (attributes, children) => {
-      return node(v.type, attributes, children)
+  elements.map((element) => {
+    toExport[element] = (attributes, children) => {
+      return node(element, attributes, children)
     }
   })
 
