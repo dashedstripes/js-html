@@ -6,14 +6,14 @@ A library for building HTML layouts with plain Javascript.
 
 This project uses `yarn` for package management, and `webpack` to build the `bundle.js` file.
 
-```
+```bash
 $ yarn install
-$ webpack --watch
+$ yarn watch # runs webpack --watch
 ```
 
 Once webpack is watching for changes, you will need to run a web server to view the page. I like using `SimpleHTTPServer` which is built into python.
 
-```
+``` bash
 $ python -m SimpleHTTPServer
 ```
 
