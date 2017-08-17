@@ -11,10 +11,10 @@ $ yarn install
 $ yarn watch # runs webpack --watch
 ```
 
-Once webpack is watching for changes, you will need to run a web server to view the page. I like using `SimpleHTTPServer` which is built into python.
+Run the server to view the page.
 
 ``` bash
-$ python -m SimpleHTTPServer
+$ yarn start
 ```
 
 ## How to use
