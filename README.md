@@ -22,12 +22,7 @@ $ yarn start
 The following shows the basic use of the library. Notice how key components are split into their own functions.
 
 ```javascript
-import {
-  div, h1, h3,
-  p, nav, ul,
-  li, a, form,
-  input, textarea, br, render
-} from './Html'
+import { div, h1, nav, ul, li, a, p, form, input, textarea, render } from './Html'
 
 function header() {
   return (
@@ -88,6 +83,7 @@ function view() {
 }
 
 render(view)
+
 ```
 
 The functions are very simple, you build your view by returning an array, then passing it to the `render` function.
