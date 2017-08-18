@@ -96,6 +96,7 @@ function toExport() {
     'span',
     'strong',
     'td',
+    'textarea',
     'th',
     'thead',
     'title',
